@@ -26,8 +26,8 @@ There is no Role Management for the users inside the utilized Client.
 1. Clone the repository:
 
     ```sh
-    git clone https://[username]@bitbucket.org/atc-code/ilab-urbreath-user-manager.git
-    cd ilab-urbreath-user-manager
+    git clone https://github.com/URBREATH/user-manager.git
+    cd user-manager
     ```
 
 2. Install the dependencies:
