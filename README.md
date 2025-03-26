@@ -44,7 +44,7 @@ There is no Role Management for the users inside the utilized Client.
    spring.keycloak.url=${KEYCLOAK_URL:###}
    keycloak.realm=${KEYCLOAK_REALM:###}
    keycloak.client-id=${KEYCLOAK_CLIENT_ID:###}
-   keycloak.client-secret=${KEYCLOAK_SECRET:###}
+   keycloak.client-secret=${KEYCLOAK_CLIENT_SECRET:###}
    spring.security.cors.domains=${CORS_DOMAINS:http://localhost:3000}
    spring.mail.host = ${MAIL_HOST:smtp.gmail.com}
    spring.mail.port = ${MAIL_PORT:587}
@@ -98,7 +98,7 @@ For local deployment Docker containers can be utilized to deploy the microservic
     KEYCLOAK_URL=..
     KEYCLOAK_REALM=..
     KEYCLOAK_CLIENT_ID=..
-    KEYCLOAK_SECRET=..
+    KEYCLOAK_CLIENT_SECRET=..
     CORS_DOMAINS=..
     MAIL_HOST=..
     MAIL_PORT=..
