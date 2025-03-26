@@ -54,6 +54,7 @@ There is no Role Management for the users inside the utilized Client.
    ```
 
 4. If needed you can upload the ```realm_export.json``` configuration provided in the repository to configure Keycloak automatically.
+
 ### Usage
 
 1. Run the application after Keycloak (Utilized version 16.1.1) is deployed:
