@@ -4,6 +4,7 @@ import java.util.List;
 
 import gr.atc.urbreath.filter.JwtAttributesValidatorFilter;
 import gr.atc.urbreath.filter.RateLimitingFilter;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,10 +24,12 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import gr.atc.urbreath.filter.CsrfCookieFilter;
 import gr.atc.urbreath.keycloak.JwtAuthConverter;
 import gr.atc.urbreath.keycloak.UnauthorizedEntryPoint;
+import lombok.extern.slf4j.Slf4j;
 
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity(prePostEnabled = true)
+@Slf4j
 public class SecurityConfig {
 
         @Value("${spring.security.cors.domains}")
@@ -81,6 +84,7 @@ public class SecurityConfig {
         public CorsConfigurationSource corsConfigurationSource() {
                 // Split the string into a list of domains
                 List<String> corsDomains = List.of(corsDomainsRaw.split(","));
+                log.info("CORS Domains: {}", corsDomains);
 
                 // Set CORS configuration
                 CorsConfiguration configuration = new CorsConfiguration();
