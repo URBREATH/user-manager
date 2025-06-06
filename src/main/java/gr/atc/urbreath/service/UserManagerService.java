@@ -80,6 +80,8 @@ public class UserManagerService implements IUserManagerService {
     private static final String ACTIVATION_EXPIRY = "activation_expiry";
     private static final String RESET_TOKEN = "reset_token";
     private static final String ERROR_MESSAGE_FIELD = "errorMessage";
+    private static final String SUPER_ADMIN_ROLE="SUPER_ADMIN";
+    private static final String GLOBAL_PILOT="ALL";
 
     // Arrays of realm-manage roles
     private static final String REALM_MANAGEMENT_CLIENT = "realm-management";
@@ -225,9 +227,11 @@ public class UserManagerService implements IUserManagerService {
             HttpHeaders headers = createAuthenticatedHeaders(token);
 
             // Validate that Group / Pilot exists
-            String pilotId = keycloakSupportService.retrievePilotCodeID(token, user.getPilotCode());
-            if (pilotId == null)
-              throw new DataRetrievalException("Specified Pilot Code does not exist in Keycloak");
+            if (!user.getPilotCode().equalsIgnoreCase(GLOBAL_PILOT)){
+                String pilotId = keycloakSupportService.retrievePilotCodeID(token, user.getPilotCode());
+                if (pilotId == null)
+                throw new DataRetrievalException("Specified Pilot Code does not exist in Keycloak");
+            }
 
             HttpEntity<UserRepresentationDTO> entity =
                     new HttpEntity<>(UserRepresentationDTO.toUserRepresentationDTO(user, null), headers);
