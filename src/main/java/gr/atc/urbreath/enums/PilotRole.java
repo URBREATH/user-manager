@@ -5,7 +5,7 @@ package gr.atc.urbreath.enums;
  */
 public enum PilotRole {
     ADMIN("ADMIN"),
-    SUPER_ADMIN("SUPER_ADMIN")
+    SUPER_ADMIN("SUPER_ADMIN"),
     USER("USER"),
     DATA_SCIENTIST("DATA_SCIENTIST");
 
