@@ -10,7 +10,7 @@ import java.lang.annotation.*;
 @Target({ElementType.PARAMETER, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ValidPilotRole {
-    String message() default "Invalid pilot role inserted. Only 'USER', 'ADMIN' or 'SUPER_ADMIN' are valid";
+    String message() default "Invalid pilot role inserted. Only 'USER', 'DATA_SCIENTIST', 'ADMIN' or 'SUPER_ADMIN' are valid";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }

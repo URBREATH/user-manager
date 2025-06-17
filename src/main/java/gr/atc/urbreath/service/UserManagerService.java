@@ -884,7 +884,9 @@ public class UserManagerService implements IUserManagerService {
                             .filter(role -> SUPER_ADMIN_ROLES_MANAGEMENT_ARRAY.stream()
                                     .anyMatch(superAdminRole -> superAdminRole.equalsIgnoreCase(role.getName())))
                             .toList();
-                else if (pilotRole.equalsIgnoreCase(PilotRole.ADMIN.toString()))
+                else if (pilotRole.equalsIgnoreCase(PilotRole.ADMIN.toString()) || 
+                        pilotRole.equalsIgnoreCase(PilotRole.USER.toString()) || // This might be changed
+                        pilotRole.equalsIgnoreCase(PilotRole.DATA_SCIENTIST.toString())) // This might be changed
                     return response.getBody().stream()
                             .filter(role -> ADMIN_ROLES_MANAGEMENT_ARRAY.stream().anyMatch(
                                     pilotRoleManagement -> pilotRoleManagement.equalsIgnoreCase(role.getName())))
